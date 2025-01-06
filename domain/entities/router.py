@@ -1,13 +1,13 @@
 from dataclasses import dataclass
 from domain.value_objects.router_type import RouterType
 
-@dataclass
+@dataclass(frozen=True)
 class Router:
-    id: str
-    type: RouterType
+    router_id: str
+    router_type: RouterType
 
     def to_dict(self):
         return {
-            "id": self.id,
-            "type": self.type.value  # Convert Enum to string
+            "router_id": self.router_id,
+            "router_type": self.router_type.value  # Convert Enum to string
         }

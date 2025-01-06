@@ -1,6 +1,14 @@
+from abc import ABC, abstractmethod
 from typing import List
 from domain.entities.router import Router
 
-class RouterViewOutputPort:
+class RouterViewOutputPort(ABC):
+    
+    @abstractmethod
     def fetch_routers(self) -> List[Router]:
-        raise NotImplementedError
+       pass 
+        # raise NotImplementedError
+
+    @abstractmethod
+    def save_routers(self, router: Router) -> None:
+       pass 
