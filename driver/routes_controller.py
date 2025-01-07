@@ -1,22 +1,11 @@
-from flask import Flask, request, jsonify
-from _infrastructure.adapters.router_view_file_adapter import db, RouterViewFileAdapter
+from flask import request, jsonify
+from _infrastructure.adapters.output.router_view_file_adapter import RouterViewFileAdapter
 from application.ports.input.router_view_inputport import RouterViewInputPort
 from domain.entities.router import Router
 from domain.value_objects.router_type import RouterType
 
-def create_app():
-    app = Flask(__name__)
 
-    # Configure your SQLite database (or any other DB you want)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///myrouters.db'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-    db.init_app(app)
-
-    # Create the tables (for demo purposes, we do it on startup)
-    with app.app_context():
-        db.create_all()
-
+def Routes(app):
     # Create instances of our hexagonal components
     router_output_port = RouterViewFileAdapter()
     router_input_port = RouterViewInputPort(router_output_port)
@@ -56,10 +45,3 @@ def create_app():
         new_router = Router(router_id=data["router_id"], router_type=router_type)
         router_input_port.add_router(new_router)
         return jsonify({"message": "Router added successfully"}), 201
-
-    return app
-
-
-if __name__ == "__main__":
-    app = create_app()
-    app.run(debug=True)

@@ -1,10 +1,11 @@
 from application.ports.output.router_view_outputport import RouterViewOutputPort
 from domain.entities.router import Router
 from domain.value_objects.router_type import RouterType
-from flask_sqlalchemy import SQLAlchemy
+from driver.flask_app import db
+# from flask_sqlalchemy import SQLAlchemy
 from typing import List
 
-db = SQLAlchemy()
+# db = SQLAlchemy()
 
 class RouterModel(db.Model):
     __tablename__ = 'routers'
