@@ -13,8 +13,8 @@ def create_app():
 
     # Create the tables (for demo purposes, we do it on startup)
     with app.app_context():
-        from driver.routes_controller import Routes
-        Routes(app)
+        from driver.routes import RoutersAPI
+        RoutersAPI(app)
         
         db.create_all()
     

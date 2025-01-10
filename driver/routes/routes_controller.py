@@ -5,7 +5,7 @@ from domain.entities.router import Router
 from domain.value_objects.router_type import RouterType
 
 
-def Routes(app):
+def RoutersAPI(app):
     # Create instances of our hexagonal components
     router_output_port = RouterViewFileAdapter()
     router_input_port = RouterViewInputPort(router_output_port)
