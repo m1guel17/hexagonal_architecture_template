@@ -7,13 +7,12 @@ from _infrastructure.config.appConfig import Config
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
-    # Configure your SQLite database (or any other DB you want)
 
     db.init_app(app)
 
-    # Create the tables (for demo purposes, we do it on startup)
     with app.app_context():
-        from driver.routes import RoutersAPI
+        # from driver.routes import RoutersAPI
+        from _infrastructure.adapters.input import RoutersAPI
         RoutersAPI(app)
         
         db.create_all()
