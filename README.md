@@ -1,5 +1,5 @@
 # hexagonal_architecture_template
-Welcome to my hexagonal_architecture_template repository! Designed to jump-start your next Software as a Service (SaaS) product using Hexagonal Architecture principles and Layered Architecture principles (In progres). This template provides you with a solid foundation to handle common SaaS requirements, including API integrations, data management, business logic, user authentication, and customizable frontends.
+Welcome to my hexagonal_architecture_template repository! Designed to jump-start your next Software as a Service (SaaS) product using Hexagonal Architecture principles and Layered Architecture principles (In progress). This template provides you with a solid foundation to handle common SaaS requirements, including API integrations, data management, business logic, user authentication, and customizable frontends.
 
 > [!CAUTION]
 > This is still a work in progress
