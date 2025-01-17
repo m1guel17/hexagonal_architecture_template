@@ -49,7 +49,7 @@ hexagonal_architecture_template/
 ├── run.py
 └── requirements.txt
 ```
-<!-- *Project structure details can be found* [here](https://github.com/m1guel17/hexagonal_architecture_template/blob/main/directory_details.md) -->
+*Project structure details can be found* [here](https://github.com/m1guel17/hexagonal_architecture_template/blob/main/readme_support/directory_details.md)
 
 ## Getting Started
 
